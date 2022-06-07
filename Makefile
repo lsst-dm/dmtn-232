@@ -25,7 +25,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 # assumes pip install of requirement and milestones.requiremetns
 index.rst:  milestones 
-	python milestones/milestones.py  celeb; 
+	python milestones/milestones.py celeb --inc=Y ; 
 
 venv:
 	python -m venv $(VENVDIR)
