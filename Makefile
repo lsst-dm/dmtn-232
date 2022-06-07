@@ -6,6 +6,8 @@ SPHINXOPTS    = -n
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = _build
+VENVDIR       = venv
+
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
@@ -21,12 +23,18 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: index.rst help clean html epub changes linkcheck refresh-bib
 
-index.rst:  milestones 
+index.rst:  milestones  venv
 	( \
-        cd milestones; \
-	make celeb \
-      	mv index.rst .. \
+        source $(VENVDIR)/bin/activate; \
+	python milestones/milestones.py  celeb; \
 	)       
+
+venv:
+	python -m venv $(VENVDIR)
+	( \
+                source $(VENVDIR)/bin/activate; \
+                pip install -r requirements.txt; \
+        )
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
