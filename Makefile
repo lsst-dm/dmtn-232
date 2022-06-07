@@ -49,6 +49,7 @@ clean:
 html: index.rst 
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	mv $(BUILDDIR)/html/_static/rubin_logo.png $(BUILDDIR)/html/_static/lsst-logo-dark.svg
+	mv top_milestones.html $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
