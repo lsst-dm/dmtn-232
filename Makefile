@@ -19,7 +19,15 @@ ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # the i18n builder cannot share the environment and doctrees with the others
 I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
-.PHONY: help clean html epub changes linkcheck refresh-bib
+.PHONY: index.rst help clean html epub changes linkcheck refresh-bib
+
+index.rst:  milestones refresh-bib
+	( \
+        cd milestones; \
+        make celeb; \
+        mv index.rst .. \
+        )       
+	PYTHONPATH=milestones python bin/generate_dmtn.py
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
@@ -30,8 +38,10 @@ help:
 
 clean:
 	rm -rf $(BUILDDIR)/*
+	git checkout index.rst
+	rm -f _static/burndown.png
 
-html:
+html: index.rst _static/burndown.png _static/graph_02C.00.png _static/graph_02C.03.png _static/graph_02C.04.png _static/graph_02C.05.png _static/graph_02C.06.png _static/graph_02C.07.png _static/graph_02C.08.png _static/graph_02C.09.png _static/graph_02C.10.png
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
@@ -53,6 +63,7 @@ linkcheck:
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
 
 refresh-bib:
+	mkdir -p lsstbib
 	refresh-lsst-bib -d lsstbib
 	@echo
 	@echo "Commit the new bibliographies: git add lsstbib && git commit -m \"Update bibliographies.\""

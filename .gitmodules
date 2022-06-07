@@ -1,0 +1,3 @@
+[submodule "milestones"]
+	path = milestones
+	url = git@github.com:lsst-dm/milestones.git
