@@ -7,6 +7,8 @@ import datetime
 import os
 from documenteer.sphinxconfig.technoteconf import configure_technote
 
+html_logo = '_static/rubin_logo.png'
+
 # Ingest settings from metadata.yaml and use documenteer's configure_technote()
 # to build a Sphinx configuration that is injected into this script's global
 # namespace.
@@ -28,4 +30,3 @@ g.update(confs)
 # Example:
 #
 #     intersphinx_mapping['python'] = ('https://docs.python.org/3', None)
-html_logo = '_static/rubin_logo_white.png'
