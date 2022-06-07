@@ -32,7 +32,7 @@ index.rst:  milestones  venv
 venv:
 	python -m venv $(VENVDIR)
 	( \
-                source $(VENVDIR)/bin/activate; \
+                . $(VENVDIR)/bin/activate; \
                 pip install -r requirements.txt; \
         )
 
