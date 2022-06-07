@@ -23,17 +23,16 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: index.rst help clean html epub changes linkcheck refresh-bib
 
-index.rst:  milestones  venv
-	( \
-        .  $(VENVDIR)/bin/activate; \
-	python milestones/milestones.py  celeb; \
-	)       
+# assumes pip install of requirement and milestones.requiremetns
+index.rst:  milestones 
+	python milestones/milestones.py  celeb; 
 
 venv:
 	python -m venv $(VENVDIR)
 	( \
                 . $(VENVDIR)/bin/activate; \
                 pip install -r requirements.txt; \
+                pip install -r milesotnes/requirements.txt; \
         )
 
 help:
