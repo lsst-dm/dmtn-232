@@ -25,7 +25,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 index.rst:  milestones  venv
 	( \
-        source $(VENVDIR)/bin/activate; \
+        .  $(VENVDIR)/bin/activate; \
 	python milestones/milestones.py  celeb; \
 	)       
 
