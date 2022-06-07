@@ -24,10 +24,10 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 index.rst:  milestones refresh-bib
 	( \
         cd milestones; \
-        make celeb; \
-        mv index.rst .. \
-        )       
-	PYTHONPATH=milestones python bin/generate_dmtn.py
+	source venv/bin/activate; \
+	python milestones.py celeb; \
+      	mv index.rst .. \
+	)       
 
 help:
 	@echo "Please use \`make <target>' where <target> is one of"
