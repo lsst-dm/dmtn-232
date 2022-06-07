@@ -21,7 +21,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: index.rst help clean html epub changes linkcheck refresh-bib
 
-index.rst:  milestones refresh-bib
+index.rst:  milestones 
 	( \
         cd milestones; \
 	source venv/bin/activate; \
@@ -39,9 +39,8 @@ help:
 clean:
 	rm -rf $(BUILDDIR)/*
 	git checkout index.rst
-	rm -f _static/burndown.png
 
-html: index.rst _static/burndown.png _static/graph_02C.00.png _static/graph_02C.03.png _static/graph_02C.04.png _static/graph_02C.05.png _static/graph_02C.06.png _static/graph_02C.07.png _static/graph_02C.08.png _static/graph_02C.09.png _static/graph_02C.10.png
+html: index.rst 
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
