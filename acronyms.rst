@@ -4,6 +4,7 @@
 Acronym	Description
 ======= ===========
 AI	Artificial Intelligence
+AI\&T	Assembly Integration & Test
 AP	Alert Production
 CCW	Camera Cable Wrap
 COMP	COMPlete
