@@ -28,7 +28,7 @@ index.rst:  milestones acronyms.rst
 	python milestones/milestones.py --forecast celeb --inc=Y ; 
 	@echo ".. include:: acronyms.rst" >> index.rst
 
-acronyms.rst :index.rst myacronyms.txt skipacronyms.txt
+acronyms.rst : myacronyms.txt skipacronyms.txt
 	generateAcronyms.py -m rst -t "PMO LSST"  index.rst 
 
 venv:

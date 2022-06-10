@@ -6,6 +6,7 @@ Acronym	Description
 AI	Artificial Intelligence
 AP	Alert Production
 CCW	Camera Cable Wrap
+COMP	COMPlete
 ComCam	The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.
 DM	Data Management
 EPO	Education and Public Outreach
