@@ -24,7 +24,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 .PHONY: index.rst help clean html epub changes linkcheck refresh-bib
 
 # assumes pip install of requirement and milestones.requiremetns
-index.rst:  milestones acronyms.rst
+index.rst:  milestones 
 	python milestones/milestones.py --forecast celeb --inc=Y ; 
 	@echo ".. include:: acronyms.rst" >> index.rst
 
