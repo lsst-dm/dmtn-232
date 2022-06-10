@@ -23,13 +23,13 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 .PHONY: index.rst help clean html epub changes linkcheck refresh-bib
 
-acronyms.rst :index.rst myacronyms.txt skipacronyms.txt
-	generateAcronyms.py -m rst -t "PMO LSST"  index.rst 
-
 # assumes pip install of requirement and milestones.requiremetns
-index.rst:  milestones 
+index.rst:  milestones acronyms.rst
 	python milestones/milestones.py --forecast celeb --inc=Y ; 
 	@echo ".. include:: acronyms.rst" >> index.rst
+
+acronyms.rst :index.rst myacronyms.txt skipacronyms.txt
+	generateAcronyms.py -m rst -t "PMO LSST"  index.rst 
 
 venv:
 	python -m venv $(VENVDIR)
