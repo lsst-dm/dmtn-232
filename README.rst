@@ -14,7 +14,7 @@ Celebratory Milestones
 DMTN-232
 ========
 
-milestones from P6 to be updated when a new dump of P6 is added to the milestones repo.
+Milestones from P6 to be updated when a new dump of P6 is added to the milestones repo.
 
 **Links:**
 
