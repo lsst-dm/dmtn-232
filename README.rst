@@ -46,13 +46,8 @@ The built technote is located at ``_build/html/index.html``.
 Editing this technical note
 ===========================
 
-You can edit the ``index.rst`` file, which is a reStructuredText document.
-The `DM reStructuredText Style Guide`_ is a good resource for how we write reStructuredText.
-
-Remember that images and other types of assets should be stored in the ``_static/`` directory of this repository.
-See ``_static/README.rst`` for more information.
-
-The published technote at https://dmtn-232.lsst.io will be automatically rebuilt whenever you push your changes to the ``main`` branch on `GitHub <https://github.com/lsst-dm/dmtn-232>`_.
+Index.rst  is generated with  the milestones submodule code. 
+Do not edit it. 
 
 Updating metadata
 =================
