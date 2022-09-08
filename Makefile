@@ -24,7 +24,6 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 # assumes pip install of requirement and milestones.requiremetns
 index.rst:  milestones 
-	sh updateDate.sh
 	python milestones/milestones.py --forecast celeb --inc=Y ; 
 	@echo ".. include:: acronyms.rst" >> index.rst
 	
