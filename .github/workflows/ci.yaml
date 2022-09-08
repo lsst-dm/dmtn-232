@@ -34,6 +34,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
+          sh updateDate.sh
           make html
 
       - name: Upload

@@ -8,7 +8,6 @@ PAPER         =
 BUILDDIR      = _build
 VENVDIR       = venv
 
-
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
 $(error The '$(SPHINXBUILD)' command was not found. Try 'running pip install -r requirements.txt' to get the necessary Python dependencies.)
@@ -27,6 +26,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 index.rst:  milestones 
 	python milestones/milestones.py --forecast celeb --inc=Y ; 
 	@echo ".. include:: acronyms.rst" >> index.rst
+	
 
 acronyms.rst : myacronyms.txt skipacronyms.txt
 	generateAcronyms.py -m rst -t "PMO LSST"  index.rst 

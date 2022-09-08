@@ -81,3 +81,4 @@ Supporting milestones
 - **2024-06-11** : Full integration of the Alert Production system within the operational environment. (DM-AP-16)
 
 .. include:: acronyms.rst
+.. include:: acronyms.rst
