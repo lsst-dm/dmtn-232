@@ -25,7 +25,7 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 # assumes pip install of requirement and milestones.requiremetns
 # celeb uses fdue forecast dates
 index.rst:  milestones 
-	python milestones/milestones.py --pmcs-data=OCTSANDBOX.xls celeb --pmcs-comp=milestones/data/pmcs/202209-ME.xls --inc=Y  
+	python milestones/milestones.py --pmcs-data=202210-OCTSANDBOX.xls celeb --pmcs-comp=milestones/data/pmcs/202209-ME.xls --inc=Y  
 	@echo ".. include:: acronyms.rst" >> index.rst
 	
 
