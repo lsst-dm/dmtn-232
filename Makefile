@@ -24,12 +24,16 @@ I18NSPHINXOPTS  = $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) .
 
 # assumes pip install of requirement and milestones.requiremetns
 # celeb uses fdue forecast dates
-index.rst:  milestones blockschedule
+index.rst:  milestones blockschedule.pdf
 	python milestones/milestones.py celeb --inc=Y ; 
-	@echo ".. image:: blockschedule.png" >> index.rst
-	@echo ".. include:: acronyms.rst" >> index.rst
+	@echo ".. image:: blockschedule.png" >> index.rst;
+	@echo "  :alt: Block Schedule" >> index.rst;
+	@echo "" >> index.rst;
+	@echo "\`Download the PDF of this Block Schedule here. <./blockschedule.pdf>\`_" >> index.rst;
+	@echo "" >> index.rst;
+	@echo ".. include:: acronyms.rst" >> index.rst;
 	
-blockschedule:
+blockschedule.pdf: milestones
 	python milestones/milestones.py blockschedule --start-date -20 
 	python milestones/milestones.py blockschedule --start-date -20 --output blockschedule.png
 
@@ -59,7 +63,7 @@ html: index.rst
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	mv $(BUILDDIR)/html/_static/rubin_logo.png $(BUILDDIR)/html/_static/lsst-logo-dark.svg
 	mv top_milestones.html $(BUILDDIR)/html
-	mv blockschedule.* $(BUILDDIR)/html
+	cp blockschedule.* $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
