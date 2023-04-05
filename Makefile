@@ -31,9 +31,12 @@ index.rst:  milestones blockschedule.pdf
 	@echo "" >> index.rst;
 	@echo "\`Download the PDF of this Block Schedule here. <./blockschedule.pdf>\`_" >> index.rst;
 	@echo "" >> index.rst;
+	@echo "\`Download PDF of Block Schedule with fixed dates here. <./blockschedule-fixdate.pdf>\`_" >> index.rst;
+	@echo "" >> index.rst;
 	@echo ".. include:: acronyms.rst" >> index.rst;
 	
 blockschedule.pdf: milestones
+	python milestones/milestones.py blockschedule --start-date 2023-01-01 --end-date 2026-01-01 --legend-location "lower right" --output blockschedule-fixdate.pdf
 	python milestones/milestones.py blockschedule --start-date -20 
 	python milestones/milestones.py blockschedule --start-date -20 --output blockschedule.png
 
@@ -63,7 +66,7 @@ html: index.rst
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	mv $(BUILDDIR)/html/_static/rubin_logo.png $(BUILDDIR)/html/_static/lsst-logo-dark.svg
 	mv top_milestones.html $(BUILDDIR)/html
-	cp blockschedule.* $(BUILDDIR)/html
+	cp blockschedule* $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
