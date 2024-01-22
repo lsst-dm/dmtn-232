@@ -33,8 +33,8 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          sh updateDate.sh
           make html
+        working-directory: .
 
       - name: Upload
         if: ${{ github.event_name == 'push' }}
