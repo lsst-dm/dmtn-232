@@ -32,8 +32,15 @@ clean:
 
 # assumes pip install of requirement and milestones.requiremetns
 # celeb uses fdue forecast dates
+.PHONY:
 index.rst:  milestones blockschedule.pdf
 	python milestones/milestones.py celeb --inc=Y ; 
+	mv index.rst temp.rst;
+	@echo "======================" > index.rst;
+	@echo "Celebratory Milestones" >> index.rst;
+	@echo "======================" >> index.rst;
+	cat temp.rst >> index.rst;
+	rm temp.rst;
 	@echo ".. image:: blockschedule.png" >> index.rst;
 	@echo "  :alt: Block Schedule" >> index.rst;
 	@echo "" >> index.rst;
