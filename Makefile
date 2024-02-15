@@ -34,13 +34,7 @@ clean:
 # celeb uses fdue forecast dates
 .PHONY:
 index.rst:  milestones blockschedule.pdf
-	python milestones/milestones.py celeb --inc=Y ; 
-	mv index.rst temp.rst;
-	@echo "======================" > index.rst;
-	@echo "Celebratory Milestones" >> index.rst;
-	@echo "======================" >> index.rst;
-	cat temp.rst >> index.rst;
-	rm temp.rst;
+	python milestones/milestones.py celeb --inc=Y --months=1 --table ; 
 	@echo ".. image:: blockschedule.png" >> index.rst;
 	@echo "  :alt: Block Schedule" >> index.rst;
 	@echo "" >> index.rst;
