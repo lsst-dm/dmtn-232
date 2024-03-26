@@ -34,7 +34,7 @@ clean:
 # celeb uses fdue forecast dates
 .PHONY:
 index.rst:  milestones blockschedule.pdf
-	python milestones/milestones.py celeb --inc=Y --months=1 --table ; 
+	python milestones/milestones.py --pmcs-data milestones/data/pmcs/202401-ME.xls celeb --inc=Y --months=1 --table ; 
 	@echo ".. image:: blockschedule.png" >> index.rst;
 	@echo "  :alt: Block Schedule" >> index.rst;
 	@echo "" >> index.rst;
@@ -43,8 +43,8 @@ index.rst:  milestones blockschedule.pdf
 	@echo ".. include:: acronyms.rst" >> index.rst;
 	
 blockschedule.pdf: milestones
-	python milestones/milestones.py blockschedule --start-date -20 
-	python milestones/milestones.py blockschedule --start-date -20 --output blockschedule.png
+	python milestones/milestones.py --pmcs-data milestones/data/pmcs/202401-ME.xls  blockschedule --start-date -20 
+	python milestones/milestones.py --pmcs-data milestones/data/pmcs/202401-ME.xls  blockschedule --start-date -20 --output blockschedule.png
 
 acronyms.rst : myacronyms.txt skipacronyms.txt
 	generateAcronyms.py -m rst -t "PMO LSST"  index.rst 
