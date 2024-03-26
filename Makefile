@@ -43,8 +43,8 @@ index.rst:  milestones blockschedule.pdf
 	@echo ".. include:: acronyms.rst" >> index.rst;
 	
 blockschedule.pdf: milestones
-	python milestones/milestones.py blockschedule --start-date -20 
-	python milestones/milestones.py blockschedule --start-date -20 --output blockschedule.png
+	python milestones/milestones.py --pmcs-data milestones/data/pmcs/202401-ME.xls  blockschedule --start-date -20 
+	python milestones/milestones.py --pmcs-data milestones/data/pmcs/202401-ME.xls  blockschedule --start-date -20 --output blockschedule.png
 
 acronyms.rst : myacronyms.txt skipacronyms.txt
 	generateAcronyms.py -m rst -t "PMO LSST"  index.rst 
