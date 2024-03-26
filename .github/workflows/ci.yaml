@@ -33,7 +33,7 @@ jobs:
       - name: Build
         shell: bash
         run: |
-          make html
+          make index.rst html
         working-directory: .
 
       - name: Upload
