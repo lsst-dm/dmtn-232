@@ -34,7 +34,7 @@ clean:
 # celeb uses fdue forecast dates
 .PHONY:
 index.rst:  milestones blockschedule.pdf
-	python milestones/milestones.py --pmcs-data=milestones/data/pmcs/202410-ME.xls celeb --inc=Y --months=1 --table ; 
+	python milestones/milestones.py --pmcs-data=milestones/data/pmcs/202411-ME.xls celeb --inc=Y --months=1 --table ; 
 	@echo ".. image:: blockschedule.png" >> index.rst;
 	@echo "  :alt: Block Schedule" >> index.rst;
 	@echo "" >> index.rst;
